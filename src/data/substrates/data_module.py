@@ -1,6 +1,6 @@
 import lightning
 
-from constants import CROPPED_SUBSTRATES_PATH
+from constants import ORIGINAL_BACTERIAS_PATH
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from ..generic_dataset import GenericDataset
@@ -26,7 +26,7 @@ class SubstratesDataModule(lightning.LightningDataModule):
     def setup(self, stage: str) -> None:
         if stage == "fit" or stage is None:
             self.train = GenericDataset(
-                dir_path=CROPPED_SUBSTRATES_PATH,
+                dir_path=ORIGINAL_BACTERIAS_PATH,
                 transform=self.transform,
             )
 

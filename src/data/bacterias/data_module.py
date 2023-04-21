@@ -1,7 +1,7 @@
 import lightning
 import data.bacterias.transforms as bacterias_transforms
 
-from constants import CROPPED_STANDALONE_BACTERIAS_PATH
+from constants import ORIGINAL_BACTERIAS_PATH
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from ..generic_dataset import GenericDataset
@@ -29,7 +29,7 @@ class BacteriasDataModule(lightning.LightningDataModule):
     def setup(self, stage: str) -> None:
         if stage == "fit" or stage is None:
             self.train = GenericDataset(
-                dir_path=CROPPED_STANDALONE_BACTERIAS_PATH,
+                dir_path=ORIGINAL_BACTERIAS_PATH,
                 transform=self.transform,
             )
 
