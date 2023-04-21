@@ -35,7 +35,8 @@ def get_images_grid(images: np.ndarray, ncols: int = 3) -> np.ndarray:
 
 
 def read_images(dir_path: str) -> list[np.ndarray]:
-    return [cv.imread(f"{dir_path}/{file_name}") for file_name in os.listdir(dir_path)]
+    files = list(sorted(os.listdir(dir_path)))
+    return [cv.imread(f"{dir_path}/{file_name}") for file_name in files]
 
 
 def get_model_checkpoint(model_name: str, version: int, epoch: int, step: int):
