@@ -34,9 +34,9 @@ def get_images_grid(images: np.ndarray, ncols: int = 3) -> np.ndarray:
     return img_grid
 
 
-def read_images(dir_path: str) -> list[np.ndarray]:
+def read_images(dir_path: str, limit=None) -> list[np.ndarray]:
     files = list(sorted(os.listdir(dir_path)))
-    return [cv.imread(f"{dir_path}/{file_name}") for file_name in files]
+    return [cv.imread(f"{dir_path}/{file_name}") for file_name in files][:limit]
 
 
 def get_model_checkpoint(model_name: str, version: int, epoch: int, step: int):
@@ -49,3 +49,7 @@ def get_bacterias_wgan_checkpoint(**kwargs):
 
 def get_substrates_wgan_checkpoint(**kwargs):
     return get_model_checkpoint(model_name="substrates_wgan", **kwargs)
+
+
+def get_bacterias_binary_segmentation_checkpoint(**kwargs):
+    return get_model_checkpoint(model_name="bacterias_binary_segmentation", **kwargs)
