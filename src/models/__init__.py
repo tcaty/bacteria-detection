@@ -1,2 +1,1 @@
-from .wgan import WGAN
-from .bacterias_binary_segmentation import BacteriasBinarySegmentation
+from .rcnn.bacterias_binary_segmentation import BacteriasBinarySegmentation
