@@ -37,10 +37,10 @@ class BacteriasBinarySegmentation(pl.LightningModule):
 
         log_dict = {
             "loss": self.loss(y, y_hat),
-            "tp": tp,
-            "fp": fp,
-            "fn": fn,
-            "tn": tn,
+            # "tp": tp,
+            # "fp": fp,
+            # "fn": fn,
+            # "tn": tn,
         }
         self.log_dict(
             log_dict,
