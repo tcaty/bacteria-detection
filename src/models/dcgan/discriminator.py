@@ -36,3 +36,9 @@ class Discriminator(nn.Module):
         y_hat = self.model(x).reshape(-1)
         # print(y_hat.shape)
         return y_hat
+
+
+discr = Discriminator()
+size = 256
+hat = torch.randn((10, 1, 1, 1))
+print(discr(hat).shape)

@@ -1,1 +1,1 @@
-from wgan import WGAN
+from .wgan import WGAN

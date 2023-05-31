@@ -36,3 +36,10 @@ class Generator(nn.Module):
         y_hat = self.model(x)
         # print(y_hat.shape)
         return y_hat
+
+
+# latent_dims = 128
+# z_dims = (latent_dims, 1, 1)
+# generator = Generator(latent_dims=latent_dims)
+# z = torch.randn((2, *z_dims))
+# print(generator(z).shape)
